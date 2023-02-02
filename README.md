@@ -14,24 +14,24 @@
 $ sudo apt install ros-melodic-julius-ros
 ```
 - ros speech recognition
-```
+```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
 $ sudo apt install ros-melodic-ros-speech-recognition
 ```
 
 ## 実行方法
-1.音声認識ノードの立ち上げ
+1.**音声認識ノードの立ち上げ**
 ```
 roslaunch ros_speech_recognition speech_recognition.launch language:=ja-JP device:=hw:0,0 sample_rate:=44100 n_channel:=2 launch_sound_play:=false continuous:=true
 ```
-を実行する。
-
-2. speech_listener.pyの実行
-「上がれ」という音声を認識したときに/speechというトピックにstd_msgs::UInt16型の"data:1"というメッセージを流して、「下がれ」という音声のときには"data:2"というメッセージを流す。
-
-3. jishupro_agare.inoをArduino Nano Everyに書き込む。
-このときに使用しているKondo Servoの変換基板が書き込みモードになっているかを確認し、書き込んだ後は実行モードに変更する。
-
-4. ros serialの通信を開始する
+を実行する。\
+\
+2. **speech_listener.pyの実行**\
+「上がれ」という音声を認識したときに/speechというトピックにstd_msgs::UInt16型の"data:1"というメッセージを流して、「下がれ」という音声のときには"data:2"というメッセージを流す。\
+\
+3. **jishupro_agare.inoをArduino Nano Everyに書き込む**\
+このときに使用しているKondo Servoの変換基板が書き込みモードになっているかを確認し、書き込んだ後は実行モードに変更する。\
+\
+4.**ros serialの通信を開始する**\
 3で書き込んだ際に、ポートが何になっているかを確認（Ubuntu環境であれば/dev/ttyACM0か/dev/ttyACM1など）し、それにあったlaunchファイルを起動する。例えば、/dev/ttyACM0のときは
 ```
 roslaunch mechatrobot jishupro_acm0.launch

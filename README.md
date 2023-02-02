@@ -14,7 +14,7 @@
 $ sudo apt install ros-melodic-julius-ros
 ```
 - ros speech recognition
-```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
+```
 $ sudo apt install ros-melodic-ros-speech-recognition
 ```
 
